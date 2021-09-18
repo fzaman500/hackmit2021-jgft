@@ -29,6 +29,7 @@ with mp_hands.Hands(
     # Draw the hand annotations on the image.
     image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    landmark_coordinates = []
     if results.multi_hand_landmarks:
       for hand_landmarks in results.multi_hand_landmarks:
         mp_drawing.draw_landmarks(
@@ -37,13 +38,14 @@ with mp_hands.Hands(
             mp_hands.HAND_CONNECTIONS,
             mp_drawing_styles.get_default_hand_landmarks_style(),
             mp_drawing_styles.get_default_hand_connections_style())
+
     cv2.imshow('preview', image)
     if cv2.waitKey(5) & 0xFF == 27:
       break
 
 vc.release()
 cv2.destroyWindow("preview")
-
+'''
 class handDetector():
     def __init__(self, mode = False, maxHands = 2, detectionCon = 0.5, trackCon = 0.5):
         self.mode = mode
@@ -78,7 +80,8 @@ class handDetector():
                 if draw:
                     cv2.circle(img, (cx, cy), 3, (255, 0, 255), cv2.FILLED)
         return lmlist
-
+'''
+'''
 def main():
     pTime = 0
     cTime = 0
@@ -100,3 +103,4 @@ def main():
 
         cv2.imshow("Image", img)
         cv2.waitKey(1)
+'''
