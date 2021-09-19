@@ -39,6 +39,7 @@ import csv
 
 # open the file in the write mode
 f = open('./data.csv', 'w')
+f.write("NUMBER, LANDMARKS\n")
 
 #IMAGE_FILE_CONTAINER = [['IMG_1140.jfif', './0/IMG_1118.JPG']]
 with mp_hands.Hands(
