@@ -1,0 +1,16 @@
+import pyautogui
+import time
+
+#Just some testing
+# time.sleep(5)
+# pyautogui.press('right')
+# time.sleep(5)
+# pyautogui.press('left')
+
+def image_to_function(motion):
+    if motion == 'hand':
+        time.sleep(1)
+        pyautogui.press('right')
+    if motion == 'fist':
+        time.sleep(1)
+        pyautogui.press('left')
