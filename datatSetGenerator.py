@@ -33,19 +33,20 @@ IMAGE_FILE_CONTAINER = []
 for i in range(10):
     IMAGE_FILE_CONTAINER.append([])
     for filename in os.listdir("./" + str(i)):
-        IMAGE_FILE_CONTAINER[i].append(filename)
+        IMAGE_FILE_CONTAINER[i].append("./" + str(i) + "/" + filename)
 
 import csv
 
 # open the file in the write mode
 f = open('./data.csv', 'w')
 
+#IMAGE_FILE_CONTAINER = [['IMG_1140.jfif', './0/IMG_1118.JPG']]
 with mp_hands.Hands(
     static_image_mode=True,
     max_num_hands=2,
     min_detection_confidence=0.5) as hands:
   for i in range(len(IMAGE_FILE_CONTAINER)):
-      for file in ['IMG_1140.jfif']:
+      for file in IMAGE_FILE_CONTAINER[i]:
         print('file:' + file)
         # Read an image, flip it around y-axis for correct handedness output (see
         # above).
